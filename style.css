@@ -3,10 +3,11 @@ html, body {
     margin: 0;
     padding: 0;
     font-family: Arial, sans-serif;
+    scroll-behavior: smooth;
 }
 
 body {
-    background: linear-gradient(135deg, #61d5ed 0%, #fad0c4 100%);
+    background: #edebeb
 }
 
 .navbar {
@@ -37,6 +38,41 @@ body {
 
 .navbar-links a:hover {
     background-color: #555;
+}
+
+.Container{
+    display: flex;
+    justify-content: center;
+   
+}
+.imgSlider {
+    width: 100%;
+    height: 600px;
+    background-image: url(1.jpg);
+    background-size: cover; /* Ensures the image covers the entire area */
+    background-position: center; 
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    animation: ChangImage 20s linear infinite;
+    display: grid;
+    place-items: center;
+}
+
+@keyframes ChangImage {
+    0% {
+        background-image: url(1.jpg);
+    }
+    25% {
+        background-image: url(2.jpg);
+    }
+    50% {
+        background-image: url(3.jpg);
+    }
+    75% {
+        background-image: url(2.jpg);
+    }
+    100% {
+        background-image: url(1.jpg);
+    }
 }
 
 .login-button {
@@ -71,3 +107,65 @@ body {
     font-size: 24px;
     color: #ddd;
 }
+
+.intro, .about, .contact {
+    padding: 40px 20px;
+    max-width: 800px;
+    background: rgba(0, 0, 0, 0.6); /* Semi-transparent background */
+    border-radius: 10px;
+    margin: 20px;
+}
+
+/* From Uiverse.io by BHARGAVPATEL1244 */ 
+button {
+    outline: none;
+    cursor: pointer;
+    border: none;
+    padding: 0.9rem 2rem;
+    margin: 0;
+    font-family: inherit;
+    font-size: inherit;
+    position: relative;
+    display: inline-block;
+    letter-spacing: 0.05rem;
+    font-weight: 700;
+    font-size: 17px;
+    border-radius: 500px;
+    overflow: hidden;
+    background: #66ff66;
+    color: ghostwhite;
+   }
+   
+   button span {
+    position: relative;
+    z-index: 10;
+    transition: color 0.4s;
+   }
+   
+   button:hover span {
+    color: black;
+   }
+   
+   button::before,
+   button::after {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+   }
+   
+   button::before {
+    content: "";
+    background: #000;
+    width: 120%;
+    left: -10%;
+    transform: skew(30deg);
+    transition: transform 0.4s cubic-bezier(0.3, 1, 0.8, 1);
+   }
+   
+   button:hover::before {
+    transform: translate3d(100%, 0, 0);
+   }
+   
